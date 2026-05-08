@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html >
+<body>
+    
+
+<% if (users.length >0 ) { %>
+<ul>
+    <% users.forEach(user=> {
+        %>  <li> <%= user.name %> - <%= user.email %> </li>
+        <% }); %> 
+    <ul>
+        <% } else { %> 
+        
+        <p> No users found.</p> <%
+        }%>
+    </ul>
+</ul>
+</body>
+</html>

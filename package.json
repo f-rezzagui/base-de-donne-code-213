@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/f-rezzagui/base-de-donne-code-213#readme",
   "dependencies": {
+    "ejs": "^5.0.2",
     "express": "^5.2.1",
     "multer": "^2.1.1"
   }

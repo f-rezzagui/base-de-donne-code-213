@@ -11,17 +11,17 @@ let submission = [
 ]
 
 function sabmet (req, res, next) {
-    const {student} = req.query
- if (!student) {
-    return res.status(400).json({ error: "error " });
+    const {roles} = req.query
+ if (roles !== "student") {
+    return res.status(400).json({ error: "alis student " });
   }
   next();
 }
 
 
 function sabmetnote (req, res, next) {
-    const {teacheur} = req.query
- if (!teacheur) {
+    const {role} = req.query
+ if ( role !== "teacheur") {
     return res.status(400).json({ error: "error " });
   }
   next();
@@ -35,7 +35,9 @@ app.get("/submission", (req, res) =>{
 
 
 
-app.post("/submission", upload.array("files",5), (req,res) => { 
+app.post("/submission/grade",sabmet, upload.array("files",5), (req,res) => { 
+
+    
     const newPost = {
         id: submission.length +1,
         studentName: req.body.studentName,
@@ -49,7 +51,7 @@ app.post("/submission", upload.array("files",5), (req,res) => {
 })
 
 
-app.patch("/submission/:id", (req, res) =>{
+app.patch("/submission/:id/grade",sabmet, (req, res) =>{
     const id = parseInt(req.params.id);
     const post = submission.find ((post) => post.id === id);
     if(!post) return res.send("post not found");

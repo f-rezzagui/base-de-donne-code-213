@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+<% if (isAdmin) { %>
+    <p>Welcome, admin. you have full access.</p>
+
+<%} else { %>
+     <p> Acces denied.</p>
+<% } %>
+<span> <%=isAdmin ? 'admin' : 'User' %></span>
+
+
+
+</body>
+</html>

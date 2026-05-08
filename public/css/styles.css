@@ -1,0 +1,27 @@
+
+#box {
+
+display: flex;
+
+flex-direction: row;
+}
+
+
+#tools{
+    display: flex;
+    flex-direction:   row;
+}
+
+#cart{
+    display: flex;
+    flex-direction: row;
+
+
+}
+#box {
+  border: 2px solid #333;
+  padding: 20px;
+  border-radius: 8px;    
+  flex: 1;               
+  text-align: center;
+}

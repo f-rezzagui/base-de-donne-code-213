@@ -5,3 +5,6 @@ router.get("/moods", moodController.getMoods)
 
 router.get("/moods/:letter",moodController.filterMoods)
 module.exports = router;
+
+router.delete("/moods/:id",moodController.deletMoode)
+module.exports = router

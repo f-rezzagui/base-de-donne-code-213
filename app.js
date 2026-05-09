@@ -21,25 +21,20 @@
 
 // app.listen(3000,() => console.log ("http://localhost:3000/"))
 
-
-const express = require("express")
-const app = express()
+const express = require("express");
+const app = express();
 // const user = require("./routes/user")
 // app.set("view engine" , "ejs")
 // app.use(express.static('public'))
 // app.use(user)
 
+const moode = require("./routes/moode");
+const cors = require("cors");
+app.set("view engine", "ejs");
+app.use(cors());
+app.use(express.static("public"));
+app.use(moode);
 
-
-const moode = require("./routes/moode")
-app.set("view engine" , "ejs")
-app.use(express.static('public'))
-app.use(moode)
-
-
-
-
-
-
-
-app.listen(3000, ()=> { console.log("you are running on port 3000")})
+app.listen(3000, () => {
+  console.log("you are running on port 3000");
+});
